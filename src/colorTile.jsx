@@ -3,22 +3,15 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
 `;
-const Title = styled.div`
-  width: 1px;
-  height: 1px;
 
-  background-color: ${(props) => props.rgb};
-`;
-
-const ColorTitle = ({ slice, result }) => {
-  console.log(result.slice(0, 5));
+const ColorTile = ({ eachLine, result }) => {
   return (
     <Container>
-      {result.slice(slice, 256 + slice).map((colorCode) => {
+      {result.slice(eachLine, 256 + eachLine).map((colorCode) => {
         const firstCode = colorCode[0];
         const secondCode = colorCode[1];
         const ThirdCode = colorCode[2];
-
+        console.log(colorCode);
         return (
           <div
             style={{
@@ -34,4 +27,4 @@ const ColorTitle = ({ slice, result }) => {
   );
 };
 
-export default ColorTitle;
+export default ColorTile;
